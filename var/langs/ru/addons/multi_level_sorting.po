@@ -1,0 +1,45 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cs-cart-latest\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: cs-cart-latest\n"
+"X-Crowdin-Project-ID: 50163\n"
+"X-Crowdin-Language: ru\n"
+"X-Crowdin-File: /release-4.15.2/addons/hidpi.po\n"
+"X-Crowdin-File-ID: 6880\n"
+"PO-Revision-Date: 2022-10-11 10:44\n"
+
+msgctxt "Addons::name::multi_level_sorting"
+msgid "Multi-Level Sorting"
+msgstr "Многоуровневая сортировка"
+
+msgctxt "Languages::default_sorting"
+msgid "Default sorting"
+msgstr "По умолчанию"
+
+msgctxt "SettingsOptions::multi_level_sorting::exikane_sorting_settings"
+msgid "Sorting settings"
+msgstr "Настройки сортировки"
+
+msgctxt "SettingsOptions::multi_level_sorting::feature_ids_to_be_sorted_first"
+msgid "Promotional feature IDs"
+msgstr "Акционные идентификаторы характеристик"
+
+msgctxt "SettingsTooltips::multi_level_sorting::feature_ids_to_be_sorted_first"
+msgid "If a product have one of the feature IDs specified - then this product will be higher in the list"
+msgstr "Если товар имеет значение для одной или более характиристик в этом списке - он будет в приоритете при сортировке. Указать через запятую"
+
+msgctxt "Languages::sort_by_default_sorting_desc"
+msgid "Multi-Level sorting"
+msgstr "Многоуровневая сортировка"
+
+msgctxt "Addons::description::multi_level_sorting"
+msgid "Adds a multi-level sorting based on certain parameters"
+msgstr "Модуль добавляет новую сортировку - многоуровневую."
+
+msgctxt "Languages::abt__ut2.sort_by_default_sorting_desc"
+msgid "Default sorting"
+msgstr "По умолчанию"
