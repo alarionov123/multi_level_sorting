@@ -1,0 +1,1 @@
+The add-on for CS-Cart. Provides an option to have a multi-sorting based on different parameters like stock, feature values, out of stock actions and name.
