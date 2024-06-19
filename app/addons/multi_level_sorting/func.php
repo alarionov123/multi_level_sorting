@@ -51,30 +51,33 @@ function fn_multi_level_sorting_get_products(
 ) {
     $sortings['default_sorting'] = 'product';
     $fields[] = 'products.out_of_stock_actions';
+    $feature_variants = explode(',', Registry::get('addons.multi_level_sorting.feature_ids_to_be_sorted_first'));
+
     if (Registry::get('addons.warehouses.status') === 'A') {
         $sorting = db_quote(
             " ORDER BY
     CASE 
-        WHEN EXISTS (SELECT variant_id FROM cscart_product_features_values WHERE product_id = products.product_id AND feature_id IN (?a)) AND war_sum_amount.amount > 0 THEN 1
+        WHEN EXISTS (SELECT variant_id FROM cscart_product_features_values WHERE product_id = products.product_id AND feature_id IN (?n)) AND war_sum_amount.amount > 0 THEN 1
         WHEN war_sum_amount.amount > 0 THEN 2 
         WHEN products.out_of_stock_actions = 'R' AND war_sum_amount.amount <= 0 THEN 3
         ELSE 4
     END,
     product ASC",
-            Registry::get('addons.multi_level_sorting.feature_ids_to_be_sorted_first'));
+            $feature_variants
+        );
     } else {
         $fields[] = 'products.amount';
         $sorting = db_quote(
             " ORDER BY
     CASE
-    WHEN EXISTS (SELECT variant_id FROM cscart_product_features_values WHERE product_id = products.product_id AND feature_id IN (?a)) AND war_sum_amount.amount > 0 THEN 0
+    WHEN EXISTS (SELECT variant_id FROM cscart_product_features_values WHERE product_id = products.product_id AND feature_id IN (?n)) AND war_sum_amount.amount > 0 THEN 0
         WHEN products.amount > 0 THEN 1
         WHEN products.out_of_stock_actions = 'R' AND war_sum_amount.amount <= 0 THEN 3
         WHEN products.amount <= 0 THEN 3
         ELSE 4
     END,
     product ASC",
-            Registry::get('addons.multi_level_sorting.feature_ids_to_be_sorted_first')
+            $feature_variants
         );
     }
 }
